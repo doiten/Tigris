@@ -193,6 +193,8 @@ class Sheet(private val host: FrameLayout) {
     private val ctx = host.context
     val root = FrameLayout(ctx).apply {
         setBackgroundColor(Color.argb(200, 0, 0, 0))
+        // Buttons grow beyond the wrap-content column when focused.
+        clipChildren = false
         isClickable = true
         alpha = 0f
         // Above focused tiles, which lift themselves with translationZ; no shadow (see ControlCenter.scrim).
